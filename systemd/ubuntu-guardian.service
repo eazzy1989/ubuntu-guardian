@@ -1,0 +1,16 @@
+[Unit]
+Description=Ubuntu Guardian – Server-Monitoring per Telegram
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ubuntu-guardian
+ExecStart=/opt/ubuntu-guardian/venv/bin/python /opt/ubuntu-guardian/guardian.py
+Restart=always
+RestartSec=10
+# Läuft als root, weil APT-Updates, SMART-Werte und systemctl Root-Rechte brauchen.
+User=root
+
+[Install]
+WantedBy=multi-user.target

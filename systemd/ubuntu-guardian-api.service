@@ -1,0 +1,14 @@
+[Unit]
+Description=Ubuntu Guardian API (nur localhost)
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ubuntu-guardian/api
+EnvironmentFile=/opt/ubuntu-guardian/.env
+ExecStart=/opt/ubuntu-guardian/venv/bin/python /opt/ubuntu-guardian/api/main.py
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target
