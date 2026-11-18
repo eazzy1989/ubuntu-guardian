@@ -1,5 +1,7 @@
 # Ubuntu Guardian
 
+[![Python](https://github.com/eazzy1989/ubuntu-guardian/actions/workflows/python-lint.yml/badge.svg)](https://github.com/eazzy1989/ubuntu-guardian/actions/workflows/python-lint.yml)
+
 Server-Monitoring für Ubuntu mit Telegram-Bot: Der Guardian überwacht Ressourcen, Dienste, Netzwerk und Sicherheit eines Linux-Servers, schickt bei Problemen Alarme aufs Handy und lässt sich komplett über Telegram-Buttons bedienen – inklusive APT-Updates.
 
 Entstanden als Homelab-Projekt, um meinen eigenen Ubuntu-Server unter Proxmox ohne zusätzliche Monitoring-Infrastruktur (Zabbix, Grafana o. Ä.) im Blick zu behalten.

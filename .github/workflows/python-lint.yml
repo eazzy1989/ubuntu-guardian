@@ -1,0 +1,25 @@
+name: Python prüfen
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ruff installieren
+        run: pip install ruff
+
+      - name: Syntaxfehler und undefinierte Namen prüfen
+        run: ruff check --select E9,F63,F7,F82 --output-format=github .
+
+      - name: Alle Dateien kompilieren
+        run: python -m compileall -q .
